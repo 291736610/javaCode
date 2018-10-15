@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day01</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>【回顾】</h1>
+<p>1.ssm整合</p>
+<p>1）导入整合的jar包 mybatis-spring</p>
+<p>2) 整合的步骤</p>
+<pre><code>&lt;!-- Spring和mybatis整合 --&gt;
+   &lt;!-- 扫描持久层的包 --&gt;
+   &lt;bean id=&quot;scannerConfigurer&quot; 
+   class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;property name=&quot;basePackage&quot; value=&quot;cn.tedu.ssm.dao&quot;/&gt;
+   &lt;/bean&gt;
+
+   &lt;!-- SqlsessionFactoryBean工厂 --&gt;
+   &lt;bean id=&quot;factoryBean&quot; 
+    class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+        &lt;!-- 依赖注入dataSource --&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+        &lt;!-- 配置映射文件 --&gt;
+        &lt;property name=&quot;mapperLocations&quot; 
+                  value=&quot;classpath:mappers/*.xml&quot;/&gt;
+   &lt;/bean&gt;
+</code></pre>
+
+<p>2.ssm整合的工程</p>
+<p>3.分析：页面-数据库（表）
+  开发：表-页面</p>
+<h2>4.部门管理-显示部门</h2>
+<h3>4.1 持久层</h3>
+<h3>4.2 业务层</h3>
+<p>1.在接口中定义方法IDeptService接口中</p>
+<pre><code>List&lt;Dept&gt; getAll();    
+</code></pre>
+
+<p>2.在实现类中是实现方法</p>
+<pre><code>public List&lt;Dept&gt; getAll(){
+    //调用持久层的方法，返回list           
+    return deptDao.selectAll();
+}
+</code></pre>
+
+<p>测试：</p>
+<h3>4.3 控制器层</h3>
+<p>url</p>
+<pre><code>/getAllDept.do
+参数列表：ModelMap
+响应方式：转发    ---showAll.jsp
+
+@RequestMapping(&quot;/getAllDept.do&quot;)
+public String getAllDept(ModelMap map){
+    1.调用业务层方法，返回list
+    2.把list添加到map中
+    3.return “showAll”；
+}
+</code></pre>
+
+<h3>4.4 页面</h3>
+<p>1.在index.jsp页面上添加链接</p>
+<pre><code>&lt;a href=&quot;${}/dept/getAllDept.do&quot;&gt;显示部门信息&lt;/a&gt;
+</code></pre>
+
+<p>2.在web文件夹中，新建showAll.jsp</p>
+<p>3.在showAll.jsp页面上，显示集合的内容</p>
+<pre><code>1）把核心标签库导入
+2）显示数据
+
+&lt;table border=1 &gt;
+    &lt;tr&gt;
+        &lt;th&gt;部门编号&lt;/th&gt;
+        &lt;th&gt;部门名称&lt;/th&gt;
+        &lt;th&gt;部门地址&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;c:forEach items=&quot;${list}&quot; var=&quot;dept&quot;&gt;
+        &lt;tr&gt;
+            &lt;td&gt;${dept.id}&lt;/td&gt;
+            &lt;td&gt;${dept.deptName}&lt;/td&gt;
+            &lt;td&gt;${dept.deptLoc}&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/c:forEach&gt;
+&lt;/table&gt;
+</code></pre>
+
+<h2>5.部门管理-删除部门</h2>
+<h3>5.1持久层</h3>
+<p>1.在DeptDao接口中定义方法</p>
+<pre><code>void deleteById(Integer id);
+</code></pre>
+
+<p>2.在映射文件中编写sql语句</p>
+<pre><code>&lt;delete id=&quot;deleteById&quot;&gt;
+    delete from dept
+    where
+        id=#{id}
+
+&lt;/delete&gt;
+</code></pre>
+
+<p>测试：</p>
+<h3>5.2 业务层</h3>
+<p>1.在IDeptSerivce接口中，定义方法</p>
+<pre><code>void removeDept(Integer id);
+</code></pre>
+
+<p>2.在实现类中实现方法</p>
+<pre><code>public void removeDept(Integer id){
+    //调用持久层的方法
+}
+</code></pre>
+
+<p>测试：</p>
+<h3>5.3 控制器层</h3>
+<p>url</p>
+<pre><code>/removeDept.do
+参数列表：id
+响应页面：重定向
+return &quot;redirect:getAllDept.do&quot;;
+
+@RequestMapping(&quot;/removeDept.do&quot;)
+public String removeDept(Integer id){
+    //1.调用业务层的删除的方法
+    deptService.removeDept(id);
+    //2.设置重定向
+    return &quot;redirect:getAllDept.do&quot;;
+}
+</code></pre>
+
+<h3>5.4 页面</h3>
+<p>1.给删除文本添加链接</p>
+<pre><code>&lt;a href=&quot;${}/dept/removeDept.do&quot;&gt;删除&lt;/a&gt;
+</code></pre>
+
+<h1>学子商城</h1>
+<p>1.用户管理</p>
+<p>1.1 注册</p>
+<p>1.2 登录</p>
+<p>1.3 修改</p>
+<p>2.地址管理</p>
+<p>2.1 添加地址</p>
+<p>2.2 查询地址</p>
+<p>2.3 修改地址</p>
+<p>3.商品管理</p>
+<p>3.1 商品分类</p>
+<p>3.2 展示商品</p>
+<p>3.3 商品详情</p>
+<p>4.购物车管理</p>
+<p>4.1 显示购物车页面</p>
+<p>4.2 管理购物车的商品</p>
+<h1>ajax</h1>
+<h2>1.ajax 定义</h2>
+<p>1.什么是ajax？不是新技术；由javascript,xml,XMLHttpRequest组合在一起；能实现异步提交的功能。</p>
+<p>2.同步提交：当用户发送请求时，当前页面不可以使用；服务器响应页面到客户端，响应完成，用户才可以使用页面。</p>
+<p>3.异步提交：当用户发送请求时，当前页面还可以继续使用，当异步请求的数据响应给页面，页面把数据显示出来
+。</p>
+<p>4.特点：异步请求 ，响应数据，提高用户的体验性。</p>
+<h2>2.ajax 工作原理</h2>
+<p><img src="2018-07-26_141418.png" /></p>
+<p>1.工作原理：客户端发送请求，请求交给xhr，xhr把请求提交给服务，服务器进行业务处理，服务器响应数据交给xhr对象，xhr对象接收数据，由javascript把数据写到页面上。</p>
+<h2>3.xhr对象的创建及其相关的函数和属性</h2>
+<p>1.创建xhr对象</p>
+<pre><code>function getXhr(){
+    //声明xhr对象
+    var xhr;
+    //判断浏览器是否支持xhr对象
+    if(window.XMLHttpRequest){
+        如果支持，那么直接创建对象
+        xhr = new XMLHttpRequest();
+    }else{
+        //不支持通常指IE5 IE6，使用以下方式创建对象
+        new ActiveXObject(&quot;Microsoft.XMLHttp&quot;);
+    }
+    返回xhr对象
+    return xhr;
+}
+</code></pre>
+
+<p>2.xhr.open(&quot;get/post&quot;,&quot;xx.do&quot;,true);表示创建url</p>
+<pre><code>第一个参数表示发送请求的方式
+第二个参数表示url
+第三个表示是否为异步请求（true表示异步请求）
+</code></pre>
+
+<p>3.xhr.send();表示发送请求</p>
+<pre><code>第一：如果是get请求，函数的参数为空
+第二：如果是post请求，参数列表为：
+xhr.send(name=admin&amp;pwd=123456);
+</code></pre>
+
+<p>4.xhr.onreadystatechange:监听，5种状态，从发送请求到响应完成。</p>
+<pre><code>xhr.onreadystatechange=function(){
+    if(xhr.readyState==4&amp;&amp;xhr.status==200){
+        var msg = xhr.responseText;
+    }
+}
+</code></pre>
+
+<p>5.xhr.readyState:表示获取5中状态</p>
+<pre><code>0.表示未初始化
+1.初始化成功，发送请求
+2.接收响应数据
+3.解析响应数据
+4.响应成功
+</code></pre>
+
+<p>6.xhr.status:表示获取状态码</p>
+<p>7.xhr.responseText:表示接收服务器端的文本</p>
+<h2>4.使用异步请求-处理用户名是否存在</h2>
+<p>1.新建工程</p>
+<pre><code>1）maven项目
+2）添加web.xml
+3) 添加tomcat运行环境
+4）依赖jar包 spring-webmvc
+5) spring-mvc.xml
+6) web.xml
+</code></pre>
+
+<p>2.创建web文件夹，在web新建register.jsp,添加两个文本框和一个按钮。</p>
+<pre><code>&lt;%@ page contentType=&quot;text/html; charset=utf-8&quot;
+pageEncoding=&quot;utf-8&quot;%&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body style=&quot;font-size:30px;&quot;&gt;
+&lt;form action=&quot;&quot;&gt;
+    姓名：&lt;input type=&quot;text&quot; 
+    name=&quot;name&quot; id=&quot;name&quot; onblur=&quot;checkName()&quot;&gt;&lt;br&gt;
+    密码：&lt;input type=&quot;password&quot; 
+    name=&quot;pwd&quot; id=&quot;pwd&quot;&gt;&lt;br&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;注册&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+//获取xhr对象
+function getXhr(){
+    //1.定义变量
+    var xhr;
+    //2.两个分支；判断浏览器是否支持xhr对象
+    if(window.XMLHttpRequest){
+        //如果支持，直接创建对象
+        xhr = new XMLHttpRequest();
+    }else{
+        //兼容ie5 ie6
+        xhr = new ActiveXObject(&quot;Microsoft.XMLHttp&quot;);
+    }
+    //返回xhr
+    return xhr;
+}
+
+//用户名异步验证
+function checkName(){
+    //1.创建xhr对象
+    var xhr = getXhr();
+    //2.监听状态变化
+    xhr.onreadystatechange = function(){
+        //如果是第五种状态，并且状态码是200
+        if(xhr.readyState==4&amp;&amp;xhr.status==200){
+            //接收服务器端的数据
+            var msg = xhr.responseText;
+            alert(msg);
+        }
+    }
+    //3.xhr.open();
+    //获取文本框的值
+    var nameValue = document.getElementById(&quot;name&quot;).value;
+    xhr.open(&quot;get&quot;,
+            &quot;../user/checkName.do?name=&quot;+nameValue,
+            true);
+    //4.xhr.send();
+    xhr.send();
+
+}
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>3.控制器</p>
+<pre><code>@Controller
+@RequestMapping(&quot;/user&quot;)
+public class UserController {
+//显示页面
+@RequestMapping(&quot;/showRegister.do&quot;)
+public String showRegister(){
+    return &quot;register&quot;;
+}
+
+//处理异步请求
+//@ResponseBody表示如果不响应页面，使用该注解
+//如果响应页面，不使用该注解
+@RequestMapping(&quot;/checkName.do&quot;)
+@ResponseBody
+public String checkName(String name){
+    //判断name，如果为admin，响应错误信息；
+    if(&quot;admin&quot;.equals(name)){
+        //设置状态码：0表示失败；1表示成功
+        return &quot;0&quot;;
+    }else{
+        return &quot;1&quot;;
+    }
+}
+}
+</code></pre>
+
+<h2>5.异步请求（post）二级菜单联动</h2>
+<p>1.表单</p>
+<pre><code>&lt;body style=&quot;font-size:30px;&quot;&gt;
+&lt;form action=&quot;&quot; &gt;
+    姓名：&lt;input type=&quot;text&quot; 
+    name=&quot;name&quot; id=&quot;name&quot; onblur=&quot;checkName()&quot;&gt;
+    &lt;span id=&quot;namespan&quot;&gt;&lt;/span&gt;
+    &lt;br&gt;
+    密码：&lt;input type=&quot;password&quot; 
+    name=&quot;pwd&quot; id=&quot;pwd&quot;&gt;&lt;br&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;注册&quot;&gt;
+&lt;/form&gt;&lt;br&gt;
+
+省份：
+&lt;select id=&quot;province&quot; onchange=&quot;getCity(this.value)&quot;&gt;
+    &lt;option&gt;请选择。。。&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;河北省&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;辽宁省&lt;/option&gt;
+&lt;/select&gt;
+城市：
+&lt;select id=&quot;city&quot;&gt;
+    &lt;option&gt;请选择。。。&lt;/option&gt;
+
+&lt;/select&gt;
+&lt;/body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+//获取xhr对象
+function getXhr(){
+    //1.定义变量
+    var xhr;
+    //2.两个分支；判断浏览器是否支持xhr对象
+    if(window.XMLHttpRequest){
+        //如果支持，直接创建对象
+        xhr = new XMLHttpRequest();
+    }else{
+        //兼容ie5 ie6
+        xhr = new ActiveXObject(&quot;Microsoft.XMLHttp&quot;);
+    }
+    //返回xhr
+    return xhr;
+}
+
+//二级联动菜单
+//cityCode表示省份的编号
+function getCity(provinceCode){
+    //1.获取xhr对象
+    var xhr = getXhr();
+    //2.监听状态变化
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4&amp;&amp;xhr.status==200){
+            var msg = xhr.responseText;
+            alert(msg);
+        }
+    }
+    //3.打开连接
+    //当发送post请求的时候，必须要设置content-type
+    //必须在send之前设置
+    xhr.open(&quot;post&quot;,&quot;../user/getCity.do&quot;,true);
+    xhr.setRequestHeader(&quot;content-type&quot;,
+            &quot;application/x-www-form-urlencoded&quot;);
+    //4.发送请求
+    xhr.send(&quot;provinceCode=&quot;+provinceCode);
+}
+
+//用户名异步验证
+function checkName(){
+    //1.创建xhr对象
+    var xhr = getXhr();
+    //2.监听状态变化
+    xhr.onreadystatechange = function(){
+        //如果是第五种状态，并且状态码是200
+        if(xhr.readyState==4&amp;&amp;xhr.status==200){
+            //接收服务器端的数据
+            var msg = xhr.responseText;
+            //在namespan节点，添加姓名是否可用的信息
+            if(msg==&quot;1&quot;){
+                document.getElementById(&quot;namespan&quot;).innerHTML
+                =&quot;姓名可以使用&quot;;
+            }else{
+                document.getElementById(&quot;namespan&quot;).innerHTML
+                =&quot;姓名不可以使用&quot;;
+            }
+
+
+        }
+    }
+    //3.xhr.open();
+    //获取文本框的值
+    var nameValue = document.getElementById(&quot;name&quot;).value;
+    xhr.open(&quot;get&quot;,
+            &quot;../user/checkName.do?name=&quot;+nameValue,
+            true);
+    //4.xhr.send();
+    xhr.send();
+
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>2.控制器方法</p>
+<pre><code>//实现二级联动菜单
+@RequestMapping(&quot;/getCity.do&quot;)
+//不响应页面，使用该注解
+@ResponseBody
+public String getCity(String provinceCode){
+    if(provinceCode.equals(&quot;1&quot;)){
+        return &quot;11,石家庄;12,秦皇岛&quot;;
+    }else{
+        return &quot;21,沈阳市;22,大连市&quot;;
+    }
+}
+</code></pre>
+
+<p>3.处理异步请求的响应数据的中文</p>
+<pre><code>    &lt;!-- mvc注解驱动（功能更加强大） --&gt;
+    &lt;mvc:annotation-driven&gt;
+        &lt;mvc:message-converters&gt;
+            &lt;!-- 设置异步请求响应数据中文不乱码 --&gt;
+            &lt;bean class=&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;&gt;
+                &lt;constructor-arg index=&quot;0&quot; value=&quot;utf-8&quot;&gt;&lt;/constructor-arg&gt;
+            &lt;/bean&gt;
+        &lt;/mvc:message-converters&gt;
+    &lt;/mvc:annotation-driven&gt;
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
